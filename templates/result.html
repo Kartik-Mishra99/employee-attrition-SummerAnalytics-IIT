@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>EmployeeAttritionPrediction</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='emp.jpg') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- Website Title -->
+    	<div class="container">
+            <h2 class='container-heading'><span class="heading_font">Employee Attrition Prediction</span></h2>
+            <div class='description'>
+    			<p>ML app to predict whether the employee will be laid off or not based on certain parameters.</p>
+    		</div>
+    	</div>
+
+		<!-- Result -->
+		<div class="results">
+			{% if prediction==1 %}
+				<h1>Prediction: <span class='danger'>SHIT ! Employee is Laid Off !!!</span></h1>
+				<img class="gif" src="{{ url_for('static', filename='sad.gif') }}" alt="Diabetes Image">
+			{% elif prediction==0 %}
+				<h1>Prediction: <span class='safe'>CONGRATULATIONS ! Employee is SAFE</span></h1>
+				<img class="gif1" src="{{ url_for('static', filename='happy.gif') }}" alt="Not Diabetes Image">
+			{% endif %}
+		</div>
+
+		<div class="footer">
+        <div class="contact">
+            <a target="_blank" href="https://github.com/Kartik-Mishra99/employee-attrition-SummerAnalytics-IIT"><i class="fab fa-github fa-lg contact-icon"></i></a>
+            <a target="_blank" href="https://www.linkedin.com/in/kartik-mishra99/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+        </div>
+        <p class="footer-description">Made with ❤️ in India by Kartik Mishra</p>
+    </div>
+</body>
+</html>

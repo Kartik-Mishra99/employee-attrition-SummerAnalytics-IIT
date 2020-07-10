@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>EmployeeAttritionPrediction</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='emp.jpg') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- Website Title -->
+    	<div class="container">
+            <h2 class='container-heading'><span class="heading_font">Employee Attrition Prediction</span></h2>
+            <div class='description'>
+    			<p>ML app to predict whether the employee will be laid off or not based on certain parameters.</p>
+    		</div>
+    	</div>
+
+
+        <div class="ml-container">
+           	<form action="{{ url_for('predict') }}" method="POST">
+           		<select class= "dropdown" id="OverTime" name="OverTime">
+           			<option value="">Select Overtime</option>
+           			<option value="1">Yes</option>
+           			<option value="0">No</option>
+           		</select><br>
+
+           		<input class="form-input" type="text" name="MonthlyIncome" placeholder="enter monthly income (dollars) e.g. 11000"><br>
+                <input class="form-input" type="text" name="Age" placeholder="Enter Employee Age e.g. 40 (in years)"><br>
+
+                <input class="form-input" type="text" name="TotalWorkingYears" placeholder="enter total working years e.g. 10"><br>
+                
+                <input class="form-input" type="text" name="YearsAtCompany" placeholder="enter no. of years at company e.g. 11"><br>
+
+                <select class="dropdown" id="JobSatisfaction" name="JobSatisfaction">
+                	<option value="">Select Job Satisfaction</option>
+                	<option value="1">Not satisfied</option>
+                	<option value="2">Satisfied</option>
+                	<option value="3">Highly Satisfied</option>
+                	<option value="4">I love my job!</option>
+                </select><br>
+                <input class="form-input" type="text" name="YearsInCurrentRole" placeholder="enter no. of years in current role e.g. 5"><br>
+
+                <select class="dropdown" id="MaritalStatus" name="MaritalStatus">
+                	<option value="">Select Marital Status</option>
+                	<option value="0">Divorce</option>
+                	<option value="1">Married</option>
+                	<option value="2">Single</option>
+                </select> <br>
+                <select class="dropdown" id="JobRole" name="JobRole">
+                	<option value="">Select Job Role</option>
+                	<option value="0">Healthcare Representative</option>
+                	<option value="1">Human Resources</option>
+                	<option value="2">Laboratory Technician</option>
+                	<option value="3">Manager</option>
+                	<option value="4">Manufacturing Director</option>
+                	<option value="5">Research Director</option>
+                	<option value="6">Research Scientist</option>
+                	<option value="7">Sales Executive</option>
+                	<option value="8">Sales Representative</option>
+                </select><br>
+
+                <select class="dropdown" id="StockOptionLevel" name="StockOptionLevel">
+                	<option value="">Select Stock option level</option>
+                	<option value="0">0</option>
+                	<option value="1">1</option>
+                	<option value="2">2</option>
+                	<option value="3">3</option>
+                </select><br>
+                
+                
+
+                <input class="form-input" type="text" name="DistanceFromHome" placeholder="enter distance from home in Kms. e.g. 5"><br>
+
+                <input class="form-input" type="YearsWithCurrManager" name="YearsWithCurrManager" placeholder="enter no. of years with current manager e.g. 5"><br>
+
+                <select class="dropdown" id="CommunicationSkill" name="CommunicationSkill">
+                	<option value="">Select Communication Skill Level</option>
+                	<option value="1">Poor</option>
+                	<option value="2">Low</option>
+                	<option value="3">Mediocre</option>
+                	<option value="4">Good</option>
+                	<option value="5">Excellent</option>
+                </select><br>
+                
+                <select class="dropdown" id="EnvironmentSatisfaction" name="EnvironmentSatisfaction">
+                	<option value="">Select Work Environment Satisfaction</option>
+                	<option value="1">Not satisfied</option>
+                	<option value="2">Satisfied</option>
+                	<option value="3">Highly Satisfied</option>
+                	<option value="4">Just love it!</option>
+                </select><br>
+                <input class="form-input" type="text" name="PercentSalaryHike" placeholder="enter percent salary hike e.g. 12"><br>
+                <input class="my-cta-button" type="submit" value="Predict">
+            </form>
+        </div>
+
+    <div class="footer">
+        <div class="contact">
+            <a target="_blank" href="https://github.com/Kartik-Mishra99/employee-attrition-SummerAnalytics-IIT"><i class="fab fa-github fa-lg contact-icon"></i></a>
+            <a target="_blank" href="https://www.linkedin.com/in/kartik-mishra99/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+        </div>
+        <p class="footer-description">Made with ❤️ in India by Kartik Mishra</p>
+    </div>
+</body>
+</html>
